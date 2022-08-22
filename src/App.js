@@ -1,7 +1,9 @@
+import StaffForm from './Form/StaffForm';
+
 function App() {
   return (
     <div className="App">
-      <h1>Staff Generator</h1>
+      <StaffForm />
     </div>
   );
 }
