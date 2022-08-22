@@ -11,3 +11,56 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.staffing {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  background: #34e89e;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0f3443, #34e89e);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0f3443, #34e89e);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+.staffing label {
+  text-align: left;
+  display: block;
+  color: #c3ade3;
+  /* color: #ddd; */
+  font-weight: bolder;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.staffing h1 {
+  font-size: 2em;
+  /* color: #233aec; */
+  color: #ffe100;
+  margin-bottom: 35px;
+}
+
+.staffing input,
+.staffing select {
+  width: 100%;
+  padding: 10px 10px;
+  margin: 15px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+.staffing button {
+  color: #fff;
+  background-color: #D61C4E;
+  border: 0;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
