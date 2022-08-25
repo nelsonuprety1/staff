@@ -4,17 +4,31 @@ import '../index.css';
 
 function StaffForm() {
   const [staffName, setStaffName] = useState('');
-  const [hotelName, setHotelName] = useState('Hilton');
+  const [hotelName, setHotelName] = useState('');
   const [shiftDate, setShiftDate] = useState('');
   const [shiftTime, setShiftTime] = useState('');
   const [dressCode, setDressCode] = useState('');
   const [address, setAddress] = useState('');
   const [contactPerson, setContactPerson] = useState('');
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    const staffObj = {
+      staffName,
+      hotelName,
+      shiftDate,
+      shiftTime,
+      dressCode,
+      address,
+      contactPerson,
+    };
+    console.log(staffObj);
+  }
+
   return (
     <div className="staffing">
       <h1>Staff Generator</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>
           Staff Name :
           <input
@@ -26,7 +40,7 @@ function StaffForm() {
           ></input>
         </label>
         <label>
-          Hotel Name :{/* <input type="dropdown" placeholder="" /> */}
+          Hotel Name :
           <select
             value={hotelName}
             onChange={e => setHotelName(e.target.value)}
@@ -48,6 +62,7 @@ function StaffForm() {
             required
           />
         </label>
+
         <label>
           Shift Time:
           <input
@@ -57,6 +72,7 @@ function StaffForm() {
             required
           />
         </label>
+
         <label>
           Dress Code :
           <input
@@ -67,6 +83,7 @@ function StaffForm() {
             required
           />
         </label>
+
         <label>
           Hotel Address :
           <input
@@ -77,6 +94,7 @@ function StaffForm() {
             required
           />
         </label>
+
         <label>
           Contact Person / Manager
           <input
@@ -87,17 +105,20 @@ function StaffForm() {
             required
           />
         </label>
-        <button>Generate</button>
       </form>
-      <p>Hello {staffName}.</p>
-      <p>Your shift at {hotelName} is on,</p>
-      <p>{shiftDate}</p>
-      <p>{shiftTime}</p>
-      <p>Dress code is {dressCode}.</p>
-      <p>The address of hotel is {address}</p>
-      <p>Contact person is {contactPerson}</p>
-      <p>Please Confirm.</p>
-      <p>Thank You</p>
+      <div className="renderedStaff">
+        <section>
+          <p>Hello {staffName}.</p>
+          <p>Your shift at {hotelName} is on,</p>
+          <p>{shiftDate}</p>
+          <p>From : {shiftTime}</p>
+          <p>Dress code : {dressCode}.</p>
+          <p>The address of hotel : {address}</p>
+          <p>Contact person : {contactPerson}</p>
+          <p>Please Confirm.</p>
+          <p>Thank You</p>
+        </section>
+      </div>
     </div>
   );
 }
